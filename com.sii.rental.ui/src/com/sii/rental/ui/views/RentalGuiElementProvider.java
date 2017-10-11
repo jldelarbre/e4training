@@ -3,6 +3,10 @@ package com.sii.rental.ui.views;
 
 import java.util.Collection;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+
+import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.jface.viewers.IColorProvider;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.LabelProvider;
@@ -15,8 +19,12 @@ import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.RentalObject;
+import com.sii.rental.ui.RentalUIConstants;
 
-public class RentalGuiElementProvider extends LabelProvider implements ITreeContentProvider, IColorProvider {
+public class RentalGuiElementProvider extends LabelProvider implements ITreeContentProvider, IColorProvider, RentalUIConstants {
+	
+	@Inject @Named(RENTAL_UI_IMG_REGISTRY)
+	private ImageRegistry registry;
 
 	@Override
 	public Color getForeground(Object element) {
@@ -71,7 +79,15 @@ public class RentalGuiElementProvider extends LabelProvider implements ITreeCont
 
 	@Override
 	public Image getImage(Object element) {
-		// TODO Auto-generated method stub
+		if (element instanceof Customer) {
+			return registry.get(IMG_CUSTOMER);
+		}
+		if (element instanceof RentalObject) {
+			return registry.get(IMG_RENTAL_OBJECT);
+		}
+		if (element instanceof Rental) {
+			return registry.get(IMG_RENTAL);
+		}
 		return super.getImage(element);
 	}
 
