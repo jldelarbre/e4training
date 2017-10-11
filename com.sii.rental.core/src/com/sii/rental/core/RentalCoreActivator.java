@@ -10,11 +10,11 @@ public class RentalCoreActivator implements BundleActivator {
 
 	private static BundleContext context;
 	
-	private static RentalAgency agency = RentalAgencyGenerator.createSampleAgency();
-	
-	public static RentalAgency getAgency() {
-		return agency;
-	}
+//	private static RentalAgency agency = RentalAgencyGenerator.createSampleAgency();
+//	
+//	public static RentalAgency getAgency() {
+//		return agency;
+//	}
 
 	static BundleContext getContext() {
 		return context;

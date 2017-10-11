@@ -6,9 +6,10 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: com.sii.rental.ui.RentalUIActivator
 Bundle-Vendor: SII
 Require-Bundle: org.eclipse.core.runtime,
-  com.sii.rental.core,
-  org.eclipse.jface,
-  org.eclipse.e4.ui.di
+ com.sii.rental.core,
+ org.eclipse.jface,
+ org.eclipse.e4.ui.di,
+ org.eclipse.e4.core.contexts
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Import-Package: javax.annotation;version="1.0.0";resolution:=optional,
   javax.inject;version="1.0.0"

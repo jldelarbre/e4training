@@ -2,6 +2,7 @@
 package com.sii.rental.ui.views;
 
 import javax.annotation.PostConstruct;
+import javax.inject.Inject;
 
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.swt.SWT;
@@ -12,8 +13,8 @@ import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
 
 import com.opcoach.training.rental.Rental;
+import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.RentalObject;
-import com.sii.rental.core.RentalCoreActivator;
 
 
 public class RentalPart {
@@ -24,7 +25,7 @@ public class RentalPart {
 	private Label lblEndDate;
 	
 	@PostConstruct
-	public void createContent(Composite parent) {
+	public void createContent(Composite parent, RentalAgency ra) {
 		parent.setLayout(new GridLayout(1, false));
 		
 		Group infoGroup = new Group(parent, SWT.NONE);
@@ -56,7 +57,7 @@ public class RentalPart {
 		
 		lblEndDate = new Label(datesgroup, SWT.NONE);
 		
-		setRental(RentalCoreActivator.getAgency().getRentals().get(0));
+		setRental(ra.getRentals().get(0));
 	}
 
 	@Focus
