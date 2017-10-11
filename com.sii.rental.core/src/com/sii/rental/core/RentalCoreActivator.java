@@ -3,9 +3,6 @@ package com.sii.rental.core;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
-import com.opcoach.training.rental.RentalAgency;
-import com.opcoach.training.rental.core.helpers.RentalAgencyGenerator;
-
 public class RentalCoreActivator implements BundleActivator {
 
 	private static BundleContext context;

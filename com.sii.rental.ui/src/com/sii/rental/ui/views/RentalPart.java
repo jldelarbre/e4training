@@ -65,7 +65,7 @@ public class RentalPart {
 		
 	}
 	
-	public void setRental(Rental r)
+	private void setRental(Rental r)
 	{
 		RentalObject rentedObject = r.getRentedObject();
 		rentedObjectLabel.setText(rentedObject.getName());
