@@ -144,6 +144,45 @@ public class RentalGuiElementProvider extends LabelProvider implements ITreeCont
 		public String toString() {
 			return label;
 		}
+
+		@Override
+		public int hashCode() {
+			final int prime = 31;
+			int result = 1;
+			result = prime * result + getOuterType().hashCode();
+			result = prime * result + ((label == null) ? 0 : label.hashCode());
+			result = prime * result + ((ra == null) ? 0 : ra.hashCode());
+			return result;
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			Node other = (Node) obj;
+			if (!getOuterType().equals(other.getOuterType()))
+				return false;
+			if (label == null) {
+				if (other.label != null)
+					return false;
+			} else if (!label.equals(other.label))
+				return false;
+			if (ra == null) {
+				if (other.ra != null)
+					return false;
+			} else if (!ra.equals(other.ra))
+				return false;
+			return true;
+		}
+
+		private RentalGuiElementProvider getOuterType() {
+			return RentalGuiElementProvider.this;
+		}
+		
 	}
 	
 	private Color getAColor(String rgbKey) {
