@@ -8,6 +8,7 @@ import org.eclipse.e4.core.di.annotations.CanExecute;
 import org.eclipse.e4.core.di.annotations.Evaluate;
 import org.eclipse.e4.core.di.annotations.Execute;
 import org.eclipse.e4.core.di.annotations.Optional;
+import org.eclipse.e4.core.services.events.IEventBroker;
 import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.dnd.Clipboard;
@@ -29,7 +30,9 @@ public class CopyCustomerHandler
 	}
 
 	@Execute
-	public Object execute(@Optional @Named(IServiceConstants.ACTIVE_SELECTION) Object selectedObject, @Named(IServiceConstants.ACTIVE_SHELL) Shell shell) throws ExecutionException
+	public Object execute(@Optional @Named(IServiceConstants.ACTIVE_SELECTION) Object selectedObject,
+			@Named(IServiceConstants.ACTIVE_SHELL) Shell shell,
+			IEventBroker broker) throws ExecutionException
 	{
 		if (selectedObject instanceof Customer)
 		{
@@ -43,6 +46,7 @@ public class CopyCustomerHandler
 			Object[] data = new Object[] { rtfData, textData };
 			clipboard.setContents(data, transfers);
 			clipboard.dispose();
+			broker.send("copyCustomer", c);
 		}
 
 		return null;

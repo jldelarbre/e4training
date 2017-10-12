@@ -1,9 +1,12 @@
 package com.sii.rental.ui;
 
 import javax.annotation.PostConstruct;
+import javax.inject.Inject;
 
 import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.e4.core.contexts.IEclipseContext;
+import org.eclipse.e4.core.di.annotations.Optional;
+import org.eclipse.e4.ui.di.UIEventTopic;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.osgi.framework.Bundle;
@@ -47,5 +50,11 @@ public class RentalAddon implements RentalUIConstants {
 		reg.put(IMG_EXPAND_ALL, ImageDescriptor.createFromURL(b.getEntry(IMG_EXPAND_ALL)));
 
 		return reg;
+	}
+	
+	@Inject
+	@Optional
+	public void reactOnCopy(@UIEventTopic("copyCustomer") Customer c) {
+		System.out.println("Customer copied: " + c.getDisplayName());
 	}
 }
