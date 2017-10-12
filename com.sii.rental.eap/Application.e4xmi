@@ -6,7 +6,7 @@
         <menus xsi:type="menu:PopupMenu" xmi:id="_CyuPUK8uEeeIlNgDwbrKUg" elementId="com.sii.rental.eap.popupmenu.hello">
           <children xsi:type="menu:HandledMenuItem" xmi:id="_s6ap0K8uEeeIlNgDwbrKUg" elementId="com.sii.rental.eap.handledmenuitem.coucou" label="coucou" command="_1dNRoK8rEeeIlNgDwbrKUg"/>
           <children xsi:type="menu:HandledMenuItem" xmi:id="_YPWuAK9EEeeIlNgDwbrKUg" elementId="com.sii.rental.eap.handledmenuitem.copygeneric" label="copyGeneric" command="_0EzAUK9DEeeIlNgDwbrKUg">
-            <visibleWhen xsi:type="ui:ImperativeExpression" xmi:id="__tUGIK9EEeeIlNgDwbrKUg" contributionURI="bundleclass://com.sii.rental.ui/com.sii.rental.ui.handlers.VisibilityExpression"/>
+            <visibleWhen xsi:type="ui:ImperativeExpression" xmi:id="__tUGIK9EEeeIlNgDwbrKUg" contributionURI="bundleclass://com.sii.rental.ui/com.sii.rental.ui.handlers.CopyCustomerHandler"/>
           </children>
         </menus>
       </children>
