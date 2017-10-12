@@ -49,6 +49,9 @@
     <children xmi:id="_6wlLesgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
     <children xmi:id="_6wlLe8gZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>
   </rootContext>
+  <menuContributions xmi:id="_2oeOEK8vEeeIlNgDwbrKUg" elementId="com.sii.rental.eap.menucontribution.0" parentId="com.sii.rental.eap.popupmenu.hello">
+    <children xsi:type="menu:HandledMenuItem" xmi:id="_56AQQK8vEeeIlNgDwbrKUg" elementId="com.sii.rental.eap.handledmenuitem.hellllllllllllllo" label="Hellllllllllllllo" command="_1dNRoK8rEeeIlNgDwbrKUg"/>
+  </menuContributions>
   <commands xmi:id="_6wlLfMgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.file.exit" commandName="quitCommand"/>
   <commands xmi:id="_6wlLgMgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.file.open" commandName="openCommand"/>
   <commands xmi:id="_6wlLg8gZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.file.save" commandName="saveCommand"/>
