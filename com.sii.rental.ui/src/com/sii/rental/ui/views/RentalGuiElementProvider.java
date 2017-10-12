@@ -6,7 +6,11 @@ import java.util.Collection;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import org.eclipse.jface.preference.IPreferenceStore;
+import org.eclipse.jface.resource.ColorRegistry;
 import org.eclipse.jface.resource.ImageRegistry;
+import org.eclipse.jface.resource.JFaceResources;
+import org.eclipse.jface.resource.StringConverter;
 import org.eclipse.jface.viewers.IColorProvider;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.LabelProvider;
@@ -25,17 +29,20 @@ public class RentalGuiElementProvider extends LabelProvider implements ITreeCont
 	
 	@Inject @Named(RENTAL_UI_IMG_REGISTRY)
 	private ImageRegistry registry;
+	
+	@Inject @Named(RENTAL_UI_PREF_STORE)
+	private IPreferenceStore ps;
 
 	@Override
 	public Color getForeground(Object element) {
 		if (element instanceof Customer) {
-			return Display.getCurrent().getSystemColor(SWT.COLOR_DARK_MAGENTA);
+			return getAColor(ps.getString(PREF_CUSTOMER_COLOR));
 		}
 		if (element instanceof Rental) {
-			return Display.getCurrent().getSystemColor(SWT.COLOR_DARK_CYAN);
+			return getAColor(ps.getString(PREF_RENTAL_COLOR));
 		}
 		if (element instanceof RentalObject) {
-			return Display.getCurrent().getSystemColor(SWT.COLOR_DARK_GREEN);
+			return getAColor(ps.getString(PREF_RENTAL_OBJECT_COLOR));
 		}
 		return null;
 	}
@@ -137,5 +144,15 @@ public class RentalGuiElementProvider extends LabelProvider implements ITreeCont
 		public String toString() {
 			return label;
 		}
+	}
+	
+	private Color getAColor(String rgbKey) {
+		ColorRegistry colorRegistry = JFaceResources.getColorRegistry();
+		Color col = colorRegistry.get(rgbKey);
+		if (col == null) {
+			colorRegistry.put(rgbKey, StringConverter.asRGB(rgbKey));
+			col = colorRegistry.get(rgbKey);
+		}
+		return col;
 	}
 }

@@ -31,7 +31,7 @@ public class ColorPrefPage extends FieldEditorPreferencePage implements RentalUI
 	protected void createFieldEditors() {
 		addField(new ColorFieldEditor(PREF_CUSTOMER_COLOR, "Couleur customer", getFieldEditorParent()));
 		addField(new ColorFieldEditor(PREF_RENTAL_COLOR, "Couleur rental", getFieldEditorParent()));
-		addField(new ColorFieldEditor(PREF_RENTAL_OBJECT_COLOR, "Couleur rental object", getFieldEditorParent()));
+		addField(new ColorFieldEditor(PREF_RENTAL_OBJECT_COLOR, "Couleur customer", getFieldEditorParent()));
 	}
 
 }
