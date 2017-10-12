@@ -7,6 +7,7 @@ import javax.annotation.PostConstruct;
 
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
+import org.eclipse.e4.ui.services.EMenuService;
 import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -19,7 +20,7 @@ import com.opcoach.training.rental.RentalAgency;
 public class RentalTreeViewPart {
 
 	@PostConstruct
-	public void createContent(Composite parent, RentalAgency ra, IEclipseContext ctx, ESelectionService ess) {
+	public void createContent(Composite parent, RentalAgency ra, IEclipseContext ctx, ESelectionService ess, EMenuService menuService) {
 		TreeViewer tv = new TreeViewer(parent);
 		
 		RentalGuiElementProvider rentalTreeProvider = ContextInjectionFactory.make(RentalGuiElementProvider.class, ctx);
@@ -40,6 +41,8 @@ public class RentalTreeViewPart {
 		});
 		
 		tv.expandAll();
+		
+		menuService.registerContextMenu(tv.getControl(), "com.sii.rental.eap.popupmenu.hello");//Pour menu popup et view dans treeview
 	}
 	
 }
