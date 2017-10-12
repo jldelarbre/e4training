@@ -13,6 +13,9 @@
             <tags>ViewMenu</tags>
             <children xsi:type="menu:HandledMenuItem" xmi:id="_Q3dVYK8uEeeIlNgDwbrKUg" elementId="com.sii.rental.eap.handledmenuitem.coucou" label="coucou" command="_1dNRoK8rEeeIlNgDwbrKUg"/>
           </menus>
+          <toolbar xmi:id="_5LyC4K8wEeeIlNgDwbrKUg" elementId="com.sii.rental.eap.toolbar.1">
+            <children xsi:type="menu:HandledToolItem" xmi:id="_obwbQK8wEeeIlNgDwbrKUg" elementId="com.sii.rental.eap.handledtoolitem.0" iconURI="platform:/plugin/com.sii.rental.ui/icons/Customers.png" command="_1dNRoK8rEeeIlNgDwbrKUg"/>
+          </toolbar>
         </children>
       </children>
     </children>
