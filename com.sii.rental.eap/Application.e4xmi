@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_6wlLcMgZEeSyMNYR5xypkQ" elementId="com.sii.rental.eap.application" bindingContexts="_6wlLecgZEeSyMNYR5xypkQ">
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmlns:ui="http://www.eclipse.org/ui/2010/UIModel/application/ui" xmi:id="_6wlLcMgZEeSyMNYR5xypkQ" elementId="com.sii.rental.eap.application" bindingContexts="_6wlLecgZEeSyMNYR5xypkQ">
   <children xsi:type="basic:TrimmedWindow" xmi:id="_6wlLccgZEeSyMNYR5xypkQ" elementId="com.sii.rental.eap.window.main" label="Eclipse 4 RCP Application" width="700" height="500">
     <children xsi:type="basic:PartSashContainer" xmi:id="_6wlLksgZEeSyMNYR5xypkQ" elementId="com.sii.rental.eap.partsashcontainer.sample" horizontal="true">
       <children xsi:type="basic:Part" xmi:id="_iWgAYK6EEeeIlNgDwbrKUg" elementId="com.sii.rental.eap.part.rentaltreeview" containerData="3617" contributionURI="bundleclass://com.sii.rental.ui/com.sii.rental.ui.views.RentalTreeViewPart" label="RentalTreeView">
         <menus xsi:type="menu:PopupMenu" xmi:id="_CyuPUK8uEeeIlNgDwbrKUg" elementId="com.sii.rental.eap.popupmenu.hello">
           <children xsi:type="menu:HandledMenuItem" xmi:id="_s6ap0K8uEeeIlNgDwbrKUg" elementId="com.sii.rental.eap.handledmenuitem.coucou" label="coucou" command="_1dNRoK8rEeeIlNgDwbrKUg"/>
+          <children xsi:type="menu:HandledMenuItem" xmi:id="_YPWuAK9EEeeIlNgDwbrKUg" elementId="com.sii.rental.eap.handledmenuitem.copygeneric" label="copyGeneric" command="_0EzAUK9DEeeIlNgDwbrKUg">
+            <visibleWhen xsi:type="ui:ImperativeExpression" xmi:id="__tUGIK9EEeeIlNgDwbrKUg" contributionURI="bundleclass://com.sii.rental.ui/com.sii.rental.ui.handlers.VisibilityExpression"/>
+          </children>
         </menus>
       </children>
       <children xsi:type="basic:PartStack" xmi:id="_6wlLk8gZEeSyMNYR5xypkQ" elementId="com.sii.rental.eap.partstack.sample" containerData="6383">
@@ -42,6 +45,7 @@
   <handlers xmi:id="_6wlLhMgZEeSyMNYR5xypkQ" elementId="com.sii.rental.eap.handler.saveCommand" contributionURI="bundleclass://com.sii.rental.eap/com.sii.rental.eap.handlers.SaveHandler" command="_6wlLg8gZEeSyMNYR5xypkQ"/>
   <handlers xmi:id="_6wlLh8gZEeSyMNYR5xypkQ" elementId="com.sii.rental.eap.handler.aboutCommand" contributionURI="bundleclass://com.sii.rental.eap/com.sii.rental.eap.handlers.AboutHandler" command="_6wlLhsgZEeSyMNYR5xypkQ"/>
   <handlers xmi:id="_8Tf0AK8rEeeIlNgDwbrKUg" elementId="com.sii.rental.eap.handler.hello" contributionURI="bundleclass://com.sii.rental.eap/com.sii.rental.eap.handlers.HelloCommand" command="_1dNRoK8rEeeIlNgDwbrKUg"/>
+  <handlers xmi:id="_J_8B8K9EEeeIlNgDwbrKUg" elementId="com.sii.rental.eap.handler.copyGeneric" contributionURI="bundleclass://com.sii.rental.ui/com.sii.rental.ui.handlers.CopyCustomerHandler" command="_0EzAUK9DEeeIlNgDwbrKUg"/>
   <bindingTables xmi:id="_6wlLfsgZEeSyMNYR5xypkQ" elementId="com.sii.rental.eap.bindingtable" bindingContext="_6wlLecgZEeSyMNYR5xypkQ">
     <bindings xmi:id="_6wlLf8gZEeSyMNYR5xypkQ" elementId="com.sii.rental.eap.keybinding.m1q" keySequence="M1+Q" command="_6wlLfMgZEeSyMNYR5xypkQ"/>
     <bindings xmi:id="_6wlLgsgZEeSyMNYR5xypkQ" elementId="com.sii.rental.eap.keybinding.m1o" keySequence="M1+O" command="_6wlLgMgZEeSyMNYR5xypkQ"/>
@@ -60,6 +64,7 @@
   <commands xmi:id="_6wlLg8gZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.file.save" commandName="saveCommand"/>
   <commands xmi:id="_6wlLhsgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.help.aboutAction" commandName="aboutCommand"/>
   <commands xmi:id="_1dNRoK8rEeeIlNgDwbrKUg" elementId="com.sii.rental.eap.command.hello" commandName="HelloWorld"/>
+  <commands xmi:id="_0EzAUK9DEeeIlNgDwbrKUg" elementId="com.sii.rental.eap.command.copyGeneric" commandName="copyGeneric" category="_AnUFsK9EEeeIlNgDwbrKUg"/>
   <addons xmi:id="_6wlLcsgZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_6wlLc8gZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
   <addons xmi:id="_6wlLdMgZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
@@ -68,4 +73,6 @@
   <addons xmi:id="_6wlLd8gZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
   <addons xmi:id="_6wlLeMgZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.workbench.bindings.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon"/>
   <addons xmi:id="_FBbA8K59EeeIlNgDwbrKUg" elementId="com.sii.rental.eap.addon.0" contributionURI="bundleclass://com.sii.rental.ui/com.sii.rental.ui.RentalAddon"/>
+  <categories xmi:id="_AnUFsK9EEeeIlNgDwbrKUg" elementId="com.sii.rental.eap.category.cat1" name="cat1"/>
+  <categories xmi:id="_EE_tgK9EEeeIlNgDwbrKUg" elementId="com.sii.rental.eap.category.cat2" name="cat2"/>
 </application:Application>
