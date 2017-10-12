@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?eclipse version="3.4"?>
 <plugin>
+
    <extension
          point="com.opcoach.e4.preferences.e4PreferencePages">
       <page
+            name="Color Preference Page"
             class="com.sii.rental.ui.prefs.ColorPrefPage"
-            id="com.sii.rental.ui.colorPrefPage"
-            name="Color Preference Page">
+            id="com.sii.rental.ui.colorPrefPage">
       </page>
+   </extension>
+   <extension
+         id="com.sii.rental.ui.fragment"
+         point="org.eclipse.e4.workbench.model">
+      <fragment
+            uri="fragment.e4xmi">
+      </fragment>
    </extension>
 
 </plugin>
