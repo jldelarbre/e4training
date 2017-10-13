@@ -9,6 +9,11 @@
             class="com.sii.rental.ui.prefs.ColorPrefPage"
             id="com.sii.rental.ui.colorPrefPage">
       </page>
+      <page
+            class="com.sii.rental.ui.prefs.RentalPalettePreferences"
+            id="com.sii.rental.ui.pagePrefPalette"
+            name="palettePrefPage">
+      </page>
    </extension>
    <extension
          id="com.sii.rental.ui.fragment"
@@ -29,6 +34,9 @@
             name="Moche"
             paletteClass="com.sii.rental.ui.palettes.MochePalette">
       </palette>
+   </extension>
+   <extension
+         point="com.opcoach.e4.preferences.e4PreferencePages">
    </extension>
 
 </plugin>

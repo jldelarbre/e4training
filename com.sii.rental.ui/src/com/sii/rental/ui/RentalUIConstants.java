@@ -11,6 +11,7 @@ public interface RentalUIConstants
 	public static final String PLUGIN_ID = "com.sii.rental.ui";
 	public static final String RENTAL_UI_PREF_STORE = PLUGIN_ID + ".preferenceStore";
 	public static final String RENTAL_UI_IMG_REGISTRY = PLUGIN_ID + ".imageRegistry";
+	public static final String PALETTE_MANAGER = PLUGIN_ID + "paletteManager";
 
 	// Constants to manage object images in registry. Constant values are path to icons
 	public static final String IMG_AGENCY = "icons/Agency.png";
@@ -21,7 +22,6 @@ public interface RentalUIConstants
 	public static final String IMG_EXPAND_ALL = "icons/expandall.gif";
 
 	// Preferences constants
-	public static final String PALETTE_MANAGER = "com.opcoach.training.e4.rental.ui.paletteManager";
 	public static final String PREF_PALETTE = "prefPalette";
 	public static final String PREF_CUSTOMER_COLOR = "CustomerColor";
 	public static final String PREF_RENTAL_COLOR = "RentalColor";

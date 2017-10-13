@@ -48,6 +48,8 @@ public class RentalAddon implements RentalUIConstants {
 //		paletteManager.put(stringMoche, new Palette(stringMoche, stringMoche, new MochePalette()));
 		
 		getPaletteExtensions(reg, ctx);
+		
+		ctx.set(PALETTE_MANAGER, paletteManager);
 	}
 	
 	public void getPaletteExtensions(IExtensionRegistry reg, IEclipseContext ctx) {
