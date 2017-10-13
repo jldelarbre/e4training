@@ -72,6 +72,7 @@
 		<module>com.sii.rental.eap</module>
 		<module>com.sii.rental.ui</module>
 		<module>com.sii.rental.feature</module>
+		<module>com.sii.rental.repository</module>
 	</modules>
 
 
