@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.sii.rental.feature"
+      label="Feature"
+      version="1.0.0.201710131427"
+      provider-name="SII">
+
+   <description url="http://www.example.com/description">
+      [Enter Feature Description here.]
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <requires>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.emf.ecore"/>
+      <import plugin="javax.inject"/>
+      <import plugin="org.eclipse.swt"/>
+      <import plugin="org.eclipse.e4.ui.model.workbench"/>
+      <import plugin="org.eclipse.jface"/>
+      <import plugin="org.eclipse.e4.ui.services"/>
+      <import plugin="org.eclipse.e4.ui.workbench"/>
+      <import plugin="org.eclipse.e4.core.di"/>
+      <import plugin="org.eclipse.e4.ui.di"/>
+      <import plugin="org.eclipse.e4.core.contexts"/>
+      <import plugin="com.sii.rental.ui" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="com.opcoach.e4.preferences"/>
+      <import plugin="org.eclipse.e4.core.di.extensions" version="0.15.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.e4.ui.model.workbench" version="2.0.1.v20170713-1800" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.e4.core.services"/>
+      <import plugin="javax.annotation"/>
+   </requires>
+
+   <plugin
+         id="com.sii.rental.core"
+         download-size="78"
+         install-size="84"
+         version="1.0.0.201710131427"
+         unpack="false"/>
+
+   <plugin
+         id="com.sii.rental.eap"
+         download-size="12"
+         install-size="22"
+         version="1.0.0.201710131427"
+         unpack="false"/>
+
+   <plugin
+         id="com.sii.rental.ui"
+         download-size="29"
+         install-size="43"
+         version="1.0.0.201710131427"
+         unpack="false"/>
+
+</feature>
