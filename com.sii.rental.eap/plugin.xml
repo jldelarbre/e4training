@@ -13,10 +13,6 @@
                value="bundleclass://com.sii.rental.eap/com.sii.rental.eap.E4LifeCycle">
          </property>
          <property
-               name="applicationCSS"
-               value="platform:/plugin/com.sii.rental.eap/css/default.css">
-         </property>
-         <property
                name="appName"
                value="com.sii.rental.eap">
          </property>
