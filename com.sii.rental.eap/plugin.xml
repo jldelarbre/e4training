@@ -16,6 +16,10 @@
                name="applicationCSS"
                value="platform:/plugin/com.sii.rental.eap/css/default.css">
          </property>
+         <property
+               name="appName"
+               value="com.sii.rental.eap">
+         </property>
       </product>
    </extension>
 
