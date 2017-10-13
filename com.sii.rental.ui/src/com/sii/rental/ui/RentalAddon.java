@@ -13,6 +13,7 @@ import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.core.di.annotations.Optional;
+import org.eclipse.e4.core.di.extensions.Preference;
 import org.eclipse.e4.ui.di.UIEventTopic;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
@@ -40,7 +41,8 @@ public class RentalAddon implements RentalUIConstants {
 		ctx.set(RentalAgency.class, a);
 		
 		ctx.set(RENTAL_UI_IMG_REGISTRY, getLocalImageRegistry());
-		ctx.set(RENTAL_UI_PREF_STORE, new ScopedPreferenceStore(InstanceScope.INSTANCE, PLUGIN_ID));
+		ScopedPreferenceStore prefStore = new ScopedPreferenceStore(InstanceScope.INSTANCE, PLUGIN_ID);
+		ctx.set(RENTAL_UI_PREF_STORE, prefStore);
 		
 //		String stringDefault = "default";
 //		String stringMoche = "moche";
@@ -50,6 +52,9 @@ public class RentalAddon implements RentalUIConstants {
 		getPaletteExtensions(reg, ctx);
 		
 		ctx.set(PALETTE_MANAGER, paletteManager);
+		
+		String palId = prefStore.getString(PREF_PALETTE);
+		ctx.set(Palette.class, paletteManager.get(palId));
 	}
 	
 	public void getPaletteExtensions(IExtensionRegistry reg, IEclipseContext ctx) {
@@ -110,4 +115,11 @@ public class RentalAddon implements RentalUIConstants {
 //			}
 //		}
 //	}
+	
+	@Inject
+	public void changePalette(@Preference(value = PREF_PALETTE) String paletteID, IEclipseContext ctx) {
+		if (paletteManager != null) {
+			ctx.set(Palette.class, paletteManager.get(paletteID));
+		}
+	}
 }

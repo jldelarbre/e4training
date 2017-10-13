@@ -38,5 +38,11 @@
    <extension
          point="com.opcoach.e4.preferences.e4PreferencePages">
    </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="com.sii.rental.ui.prefs.RentalPrefInit">
+      </initializer>
+   </extension>
 
 </plugin>

@@ -52,9 +52,7 @@ public class RentalTreeViewPart implements RentalUIConstants {
 	}
 	
 	@Inject
-	void refreshColor(@Preference(value=PREF_CUSTOMER_COLOR) String ccolor,
-			@Preference(value=PREF_RENTAL_COLOR) String rcolor,
-			@Preference(value=PREF_RENTAL_OBJECT_COLOR) String rocolor) {
+	void refreshColor(@Preference(value= PREF_PALETTE) String pal) {
 		if (tv != null && !tv.getControl().isDisposed()) {
 			tv.refresh();
 		}
