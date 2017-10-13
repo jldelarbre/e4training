@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin>
+   <extension-point id="palette" name="palette" schema="schema/palette.exsd"/>
 
    <extension
          point="com.opcoach.e4.preferences.e4PreferencePages">
@@ -15,6 +16,19 @@
       <fragment
             uri="fragment.e4xmi">
       </fragment>
+   </extension>
+   <extension
+         point="com.sii.rental.ui.palette">
+      <palette
+            id="com.sii.rental.ui.paletteDefault"
+            name="Default"
+            paletteClass="com.sii.rental.ui.palettes.DefaultPalette">
+      </palette>
+      <palette
+            id="com.sii.rental.ui.paletteMoche"
+            name="Moche"
+            paletteClass="com.sii.rental.ui.palettes.MochePalette">
+      </palette>
    </extension>
 
 </plugin>
